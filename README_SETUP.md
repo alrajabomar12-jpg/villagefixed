@@ -83,3 +83,7 @@ Transfers and approved deposit/withdrawal flows use SQL functions in the migrati
 - `/api/auth/session` returns HTML: confirm this repository's `vercel.json` is deployed and `/api/[...path].ts` exists.
 - Admin 403: check Omar's `role` is `admin` and `status` is `active`.
 - Image upload fails: ensure the service-role key is valid. The API creates the `public-media` bucket when possible.
+
+
+## Vercel API routing (final)
+This build uses a single explicit Vercel Function at `/api/gateway` for all application API calls. The frontend sends the requested internal route in the `path` query parameter. `/api/bootstrap` and `/api/health` are explicit wrapper functions. The previous catch-all function was removed to avoid Vite/Vercel SPA rewrite conflicts and HTTP 405 responses.

@@ -12,7 +12,8 @@ export type SessionUser = {
 export async function api<T = any>(path: string, options: RequestInit = {}): Promise<T> {
   const headers = new Headers(options.headers || {});
   if (options.body && !(options.body instanceof FormData) && !headers.has("content-type")) headers.set("content-type", "application/json");
-  const res = await fetch(`/api${path}`, { ...options, headers, credentials: "include" });
+  const target = `/api/gateway?path=${encodeURIComponent(path)}`;
+  const res = await fetch(target, { ...options, headers, credentials: "include" });
   let payload: any = null;
   try { payload = await res.json(); } catch { /* ignored */ }
   if (!res.ok || payload?.success === false) throw new Error(payload?.error?.message || payload?.message || `Request failed (${res.status})`);
