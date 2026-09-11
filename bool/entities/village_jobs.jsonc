@@ -1,0 +1,62 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_jobs",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string",
+      "default": "Village Central"
+    },
+    "short_description": {
+      "type": "string",
+      "default": ""
+    },
+    "full_description": {
+      "type": "string",
+      "default": ""
+    },
+    "compensation": {
+      "type": "string",
+      "default": ""
+    },
+    "location": {
+      "type": "string",
+      "default": "Village Central"
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "draft",
+        "open",
+        "closed",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "applications": {
+      "type": "integer",
+      "default": 0
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "applications_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "deadline": {
+      "type": "date"
+    }
+  },
+  "required": [
+    "title",
+    "status",
+    "applications"
+  ],
+  "x-bool-access": "public"
+}

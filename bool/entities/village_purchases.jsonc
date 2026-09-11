@@ -1,0 +1,38 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_purchases",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "default": 0
+    },
+    "buyer": {
+      "type": "string"
+    },
+    "item_name": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "completed",
+        "refunded",
+        "revoked"
+      ],
+      "default": "completed"
+    }
+  },
+  "required": [
+    "buyer",
+    "item_name",
+    "amount",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

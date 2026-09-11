@@ -1,0 +1,20 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_diamond_reserves",
+  "type": "object",
+  "properties": {
+    "diamond_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "updated_by": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "required": [
+    "diamond_count"
+  ],
+  "x-bool-access": "public"
+}

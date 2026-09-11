@@ -1,0 +1,32 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_economy_settings",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "value": {
+      "type": "number",
+      "default": 0
+    },
+    "string_value": {
+      "type": "string",
+      "default": ""
+    },
+    "label": {
+      "type": "string"
+    },
+    "updated_by": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "required": [
+    "key",
+    "value",
+    "label"
+  ],
+  "x-bool-access": "public"
+}

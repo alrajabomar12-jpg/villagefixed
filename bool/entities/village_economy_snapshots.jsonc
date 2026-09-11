@@ -1,0 +1,47 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_economy_snapshots",
+  "type": "object",
+  "properties": {
+    "currency_supply_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "diamond_reserve_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "exchange_rate_cents": {
+      "type": "integer",
+      "default": 1000
+    },
+    "reserve_value_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "backing_ratio": {
+      "type": "number",
+      "default": 0
+    },
+    "total_deposits_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "total_withdrawals_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "transfer_volume_cents": {
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "required": [
+    "currency_supply_cents",
+    "diamond_reserve_count",
+    "exchange_rate_cents",
+    "reserve_value_cents"
+  ],
+  "x-bool-access": "public"
+}

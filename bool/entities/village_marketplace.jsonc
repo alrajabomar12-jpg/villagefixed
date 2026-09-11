@@ -1,0 +1,56 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_marketplace",
+  "type": "object",
+  "properties": {
+    "category": {
+      "type": "string",
+      "default": "General"
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "image_path": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "default": 0
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "published",
+        "draft",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "stock": {
+      "type": "integer",
+      "default": 0
+    },
+    "unlimited_stock": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "category",
+    "price",
+    "stock",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

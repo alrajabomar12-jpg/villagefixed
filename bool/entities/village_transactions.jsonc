@@ -1,0 +1,104 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_transactions",
+  "type": "object",
+  "properties": {
+    "amount": {
+      "type": "number",
+      "default": 0
+    },
+    "amount_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "balance_after": {
+      "type": "number",
+      "default": 0
+    },
+    "balance_before": {
+      "type": "number",
+      "default": 0
+    },
+    "balance_after_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "balance_before_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "created_by": {
+      "type": "string",
+      "default": ""
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "note": {
+      "type": "string",
+      "default": ""
+    },
+    "related_transaction_id": {
+      "type": "string",
+      "default": ""
+    },
+    "transfer_id": {
+      "type": "string",
+      "default": ""
+    },
+    "deposit_id": {
+      "type": "string",
+      "default": ""
+    },
+    "withdrawal_id": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "completed",
+        "reversed",
+        "cancelled"
+      ],
+      "default": "completed"
+    },
+    "type": {
+      "type": "enum",
+      "enum": [
+        "diamond_deposit",
+        "diamond_withdrawal",
+        "transfer_sent",
+        "transfer_received",
+        "admin_credit",
+        "admin_debit",
+        "balance_adjustment",
+        "transfer_reversal",
+        "deposit_reversal",
+        "withdrawal_reversal",
+        "deposit",
+        "withdrawal",
+        "purchase",
+        "adjustment",
+        "refund",
+        "reversal"
+      ],
+      "default": "adjustment"
+    },
+    "user_id": {
+      "type": "string",
+      "default": ""
+    },
+    "username": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "username",
+    "type",
+    "amount",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

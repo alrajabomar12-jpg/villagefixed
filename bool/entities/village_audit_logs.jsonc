@@ -1,0 +1,33 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_audit_logs",
+  "type": "object",
+  "properties": {
+    "actor": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string",
+      "default": ""
+    },
+    "reason": {
+      "type": "string",
+      "default": ""
+    },
+    "metadata": {
+      "type": "json"
+    },
+    "created_at_source": {
+      "type": "datetime"
+    }
+  },
+  "required": [
+    "actor",
+    "action"
+  ],
+  "x-bool-access": "public"
+}

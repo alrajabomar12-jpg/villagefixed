@@ -1,0 +1,59 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_deposit_requests",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "diamond_count": {
+      "type": "integer",
+      "default": 0
+    },
+    "exchange_rate_cents": {
+      "type": "integer",
+      "default": 1000
+    },
+    "calculated_amount_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "user_note": {
+      "type": "string",
+      "default": ""
+    },
+    "admin_note": {
+      "type": "string",
+      "default": ""
+    },
+    "reviewed_by": {
+      "type": "string",
+      "default": ""
+    },
+    "reviewed_at": {
+      "type": "datetime"
+    },
+    "completed_at": {
+      "type": "datetime"
+    }
+  },
+  "required": [
+    "user_id",
+    "diamond_count",
+    "exchange_rate_cents",
+    "calculated_amount_cents",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

@@ -1,0 +1,45 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_transfers",
+  "type": "object",
+  "properties": {
+    "sender_user_id": {
+      "type": "string"
+    },
+    "recipient_user_id": {
+      "type": "string"
+    },
+    "amount_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "note": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "completed",
+        "reversed",
+        "cancelled"
+      ],
+      "default": "completed"
+    },
+    "initiated_by": {
+      "type": "string",
+      "default": ""
+    },
+    "completed_at": {
+      "type": "datetime"
+    }
+  },
+  "required": [
+    "sender_user_id",
+    "recipient_user_id",
+    "amount_cents",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

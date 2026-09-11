@@ -1,0 +1,54 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_reserve_transactions",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "enum",
+      "enum": [
+        "deposit_received",
+        "withdrawal_paid",
+        "admin_addition",
+        "admin_removal",
+        "correction"
+      ],
+      "default": "correction"
+    },
+    "diamond_amount": {
+      "type": "integer",
+      "default": 0
+    },
+    "diamond_balance_before": {
+      "type": "integer",
+      "default": 0
+    },
+    "diamond_balance_after": {
+      "type": "integer",
+      "default": 0
+    },
+    "related_deposit_id": {
+      "type": "string",
+      "default": ""
+    },
+    "related_withdrawal_id": {
+      "type": "string",
+      "default": ""
+    },
+    "created_by": {
+      "type": "string",
+      "default": ""
+    },
+    "reason": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "required": [
+    "type",
+    "diamond_amount",
+    "diamond_balance_before",
+    "diamond_balance_after"
+  ],
+  "x-bool-access": "public"
+}

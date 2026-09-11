@@ -1,0 +1,56 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_news",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "excerpt": {
+      "type": "string",
+      "default": ""
+    },
+    "body": {
+      "type": "string",
+      "default": ""
+    },
+    "category": {
+      "type": "string",
+      "default": "Community"
+    },
+    "cover_image_path": {
+      "type": "string",
+      "default": ""
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "published",
+        "draft",
+        "archived"
+      ],
+      "default": "draft"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "author": {
+      "type": "string",
+      "default": "Omar"
+    },
+    "published_at": {
+      "type": "datetime"
+    }
+  },
+  "required": [
+    "title",
+    "status"
+  ],
+  "x-bool-access": "public"
+}

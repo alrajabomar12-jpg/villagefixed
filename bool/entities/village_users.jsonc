@@ -1,0 +1,91 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_users",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string"
+    },
+    "normalized_username": {
+      "type": "string",
+      "description": "Lowercase Minecraft username"
+    },
+    "display_name": {
+      "type": "string",
+      "default": ""
+    },
+    "role": {
+      "type": "enum",
+      "enum": [
+        "user",
+        "admin"
+      ],
+      "default": "user"
+    },
+    "status": {
+      "type": "enum",
+      "enum": [
+        "active",
+        "suspended",
+        "disabled"
+      ],
+      "default": "active"
+    },
+    "banking_status": {
+      "type": "enum",
+      "enum": [
+        "active",
+        "frozen"
+      ],
+      "default": "active"
+    },
+    "balance": {
+      "type": "number",
+      "default": 0
+    },
+    "must_change_password": {
+      "type": "boolean",
+      "default": false
+    },
+    "last_seen_at": {
+      "type": "datetime"
+    },
+    "password_hash": {
+      "type": "string",
+      "default": ""
+    },
+    "freeze_reason": {
+      "type": "string",
+      "default": ""
+    },
+    "frozen_by": {
+      "type": "string",
+      "default": ""
+    },
+    "frozen_at": {
+      "type": "datetime"
+    },
+    "unfrozen_by": {
+      "type": "string",
+      "default": ""
+    },
+    "unfrozen_at": {
+      "type": "datetime"
+    },
+    "suspension_reason": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "required": [
+    "username",
+    "normalized_username",
+    "role",
+    "status",
+    "banking_status",
+    "balance",
+    "must_change_password"
+  ],
+  "x-bool-access": "public"
+}

@@ -1,0 +1,34 @@
+// Data model managed by Bool. To change it, ask Bool in chat — Bool keeps this
+// file and your database in sync. Hand-editing won't migrate the database.
+{
+  "name": "village_accounts",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Village user id"
+    },
+    "balance_cents": {
+      "type": "integer",
+      "default": 0
+    },
+    "banking_status": {
+      "type": "enum",
+      "enum": [
+        "active",
+        "frozen"
+      ],
+      "default": "active"
+    },
+    "updated_at_source": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "required": [
+    "user_id",
+    "balance_cents",
+    "banking_status"
+  ],
+  "x-bool-access": "public"
+}
